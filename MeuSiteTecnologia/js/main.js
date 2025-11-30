@@ -1,4 +1,3 @@
-/* --- 1. Lógica do Menu (Vinda da sua Referência) --- */
 const btnMobile = document.getElementById('btn-mobile');
 
 function toggleMenu(event) {
@@ -7,7 +6,6 @@ function toggleMenu(event) {
     nav.classList.toggle('active');
     const active = nav.classList.contains('active');
     event.currentTarget.setAttribute('aria-expanded', active);
-    
     if (active) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
     } else {
@@ -20,7 +18,6 @@ if (btnMobile) {
     btnMobile.addEventListener('touchstart', toggleMenu);
 }
 
-/* --- 2. Saudação Dinâmica (Requisito da Atividade) --- */
 const elementoSaudacao = document.getElementById('mensagem-boas-vindas');
 if (elementoSaudacao) {
     const hora = new Date().getHours();
@@ -28,11 +25,9 @@ if (elementoSaudacao) {
     if (hora < 12) texto = "Bom dia! Confira as novidades de tecnologia.";
     else if (hora < 18) texto = "Boa tarde! Tecnologia para o seu dia.";
     else texto = "Boa noite! Ofertas noturnas na TechZone.";
-    
     elementoSaudacao.textContent = texto;
 }
 
-/* --- 3. Detalhes do Produto (Requisito da Atividade) --- */
 const dadosProdutos = [
     { id: 1, nome: "Smartphone 5G", desc: "Conexão ultra rápida, câmeras avançadas e conectividade 5G." },
     { id: 2, nome: "Ultrabook Pro", desc: "Leveza e potência para trabalho e mobilidade." },
@@ -49,7 +44,6 @@ botoesDetalhes.forEach(botao => {
     botao.addEventListener('click', () => {
         const id = parseInt(botao.getAttribute('data-id'));
         const produto = dadosProdutos.find(p => p.id === id);
-        
         if (produto && divDetalhes) {
             divDetalhes.innerHTML = `
                 <h4>${produto.nome}</h4>
@@ -61,7 +55,6 @@ botoesDetalhes.forEach(botao => {
     });
 });
 
-/* --- 4. Formulário (Requisito da Atividade) --- */
 const formContato = document.getElementById('formContato');
 if (formContato) {
     formContato.addEventListener('submit', (e) => {
@@ -73,7 +66,6 @@ if (formContato) {
                 <div class="alert alert-success">Obrigado, ${nome}! Mensagem recebida.</div>
             `;
         } else {
-            // fallback: mostrar uma alerta temporária se o container não existir
             alert(`Obrigado, ${nome}! Mensagem recebida.`);
         }
         formContato.reset();
