@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone - Home</title>
+    <link href="/MeuSiteTecnologia/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+</head>
+<body>
+
+    <header id="header">
+        <a id="logo" href="index.html">TechZone ⚡</a>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="mensagem-boas-vindas" class="bg-light text-center py-2 fw-bold text-primary"></div>
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="carousel-box text-center p-4">
+                            <h3>Novos Smartphones</h3>
+                            <p class="lead mb-0">Conheça os lançamentos com câmeras avançadas e conectividade 5G.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="carousel-box text-center p-4">
+                            <h3>Notebooks Gamer</h3>
+                            <p class="lead mb-0">Desempenho e refrigeração para sessões prolongadas de jogo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="carousel-box text-center p-4">
+                            <h3>Redes e Conectividade</h3>
+                            <p class="lead mb-0">Soluções para internet rápida e estável em toda a casa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <section id="banner-destaque">
+            <div class="banner-conteudo banner-texto">
+                <h2>Conecte-se ao Futuro</h2>
+                <p>Encontre os melhores gadgets, periféricos e hardware para transformar seu dia a dia.</p>
+                <a href="produtos.html" class="btn btn-primary btn-lg">Ver Loja</a>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="titulo-secao mb-4">Em Alta</h2>
+            <div class="row g-4">
+                <article class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <figure class="mb-0">
+                            <img src="/MeuSiteTecnologia/img/smartphone.jpg" class="card-img-top" alt="Smartphone 5G">
+                        </figure>
+                        <div class="card-body">
+                            <h5 class="card-title">Smartphone 5G</h5>
+                            <p class="card-text">Conexão ultra rápida.</p>
+                            <a href="produtos.html" class="btn btn-outline-dark w-100">Detalhes</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <figure class="mb-0">
+                            <img src="/MeuSiteTecnologia/img/notebook.jpg" class="card-img-top" alt="Ultrabook Pro">
+                        </figure>
+                        <div class="card-body">
+                            <h5 class="card-title">Ultrabook Pro</h5>
+                            <p class="card-text">Leveza e potência.</p>
+                            <a href="produtos.html" class="btn btn-outline-dark w-100">Detalhes</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <figure class="mb-0">
+                            <img src="/MeuSiteTecnologia/img/fone.jpg" class="card-img-top" alt="Fone Noise Cancelling">
+                        </figure>
+                        <div class="card-body">
+                            <h5 class="card-title">Fone Noise Cancelling</h5>
+                            <p class="card-text">Silêncio absoluto.</p>
+                            <a href="produtos.html" class="btn btn-outline-dark w-100">Detalhes</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Henrique Schuermann Pimenta - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/MeuSiteTecnologia/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

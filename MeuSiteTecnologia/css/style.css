@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* --- Reset e Base --- */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* reset básico para listas (não tornar UL um container flex global) */
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* --- Header e Logo --- */
+#header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    height: 75px;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #020202;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+#logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#logo:hover {
+    color: #0d6efd; /* Azul Tech */
+}
+
+/* --- Menu Desktop (ESTE É O BLOCO QUE FAZ APARECER NO COMPUTADOR) --- */
+#menu {
+    display: flex;             /* Obriga a aparecer lado a lado */
+    list-style: none;
+    gap: 1.5rem;
+    margin-bottom: 0;          /* Remove margem do Bootstrap */
+    padding-left: 0;           /* Remove padding do Bootstrap */
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    color: white;              /* Garante cor branca */
+    text-decoration: none;     /* Garante sem sublinhado */
+}
+
+#menu a:hover {
+    color: #0d6efd;            /* Azul Tech */
+    background: #222;
+    border-radius: 4px;
+}
+
+/* --- Botão Mobile (Escondido no Desktop) --- */
+#btn-mobile {
+    display: none;             /* Só aparece no celular */
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#hamburger {
+    display: block;
+    border-top: 2px solid;
+    width: 20px;
+    color: #fff;
+}
+
+#hamburger::after, #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* --- Responsividade (Aqui começam as regras de Celular) --- */
+@media (max-width: 768px) {
+    /* No celular, o botão aparece */
+    #btn-mobile {
+        display: block;
+    }
+
+    /* No celular, o menu some inicialmente */
+    #menu {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 75px;
+        right: 0px;
+        background: #020202;
+        flex-direction: column;
+        padding: 1rem 0;
+        z-index: 1000;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+    }
+    
+    #menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #menu a {
+        padding: 1rem 0;
+        color: white;
+    }
+
+    /* Quando clica no botão (JS adiciona .active), o menu aparece */
+    #nav.active #menu {
+        display: flex;
+    }
+
+    /* Animação do X no hambúrguer */
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+/* --- Banner / Hero Section --- */
+#banner-destaque {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.banner-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.banner-texto h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* --- Carousel boxes (texto em vez de imagem) --- */
+.carousel-box {
+    min-height: 520px; /* aumentado verticalmente para cobrir mais espaço */
+    width: 100%;          /* ocupar toda a largura disponível */
+    max-width: none;      /* remover limite superior */
+    margin: 0;            /* remover margem lateral */
+    display: flex;
+    flex-direction: column; /* empilha título e descrição (corrige texto inline) */
+    gap: 1rem;
+    padding: 2.5rem 2rem;  /* espaçamento interno maior para empurrar conteúdo para baixo */
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,#343a40,#2b2b2b);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.32);
+}
+.carousel-box h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.carousel-box p {
+    margin: 0;
+    color: #e9ecef;
+}
+
+/* limitar largura do texto dentro do box para melhor leitura */
+.carousel-box .lead {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+/* Aproximar setas do box e aumentar contraste */
+.carousel-control-prev {
+    left: 1rem; /* mais próximo da borda do box */
+    width: auto;
+    z-index: 3;
+}
+.carousel-control-next {
+    right: 1rem; /* mais próximo da borda do box */
+    width: auto;
+    z-index: 3;
+}
+
+/* garantir que o carousel não adicione padding indesejado */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    padding: 0;
+}
+
+/* posicionamento vertical central das setas */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Tornar os controles do carousel mais visíveis e maiores */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 6%;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 48px;
+    height: 48px;
+    background-size: 48px 48px;
+    /* torna o ícone claro (inverte o SVG padrão do Bootstrap) */
+    filter: invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+/* Se o container for pequeno (mobile), reduzir largura do box para caber corretamente */
+@media (max-width: 768px) {
+    .carousel-box {
+        width: 95%;
+        min-height: 320px; /* aumentar em mobile também para manter proporção */
+        padding: 1.25rem 0.75rem;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
+}
+
+/* --- Estilos Gerais --- */
+main {
+    flex: 1;
+}
+
+footer {
+    background: #020202;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* --- Cards --- */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    border-color: #0d6efd;
+}
+
+/* --- Product cards: imagens e alinhamento consistente --- */
+figure.mb-0 {
+    height: 220px; /* altura fixa para que todas as figuras tenham o mesmo espaço */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+figure.mb-0 img.card-img-top {
+    max-height: 100%;
+    width: auto;
+    display: block;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1 1 auto;
+}
+
+.card .card-body .btn {
+    margin-top: auto; /* empurra o botão para baixo, alinhando todos os botões */
+}
+
+.titulo-secao::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0d6efd;
+    margin-top: 5px;
+}

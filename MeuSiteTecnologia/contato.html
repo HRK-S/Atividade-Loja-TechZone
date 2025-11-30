@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone - Contato</title>
+    <link href="/MeuSiteTecnologia/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+</head>
+<body>
+
+    <header id="header">
+        <a id="logo" href="index.html">TechZone ⚡</a>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html" style="color:#0d6efd">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="titulo-secao mb-4">Fale Conosco</h2>
+                <!-- elemento de retorno removido (vazio) -->
+
+                <form id="formContato" class="bg-light p-4 rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <select class="form-select" id="assunto">
+                            <option>Suporte Técnico</option>
+                            <option>Vendas</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mensagem</label>
+                        <textarea class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><p>&copy; 2025 Henrique Schuermann Pimenta - Todos os direitos reservados.</p></p>
+    </footer>
+
+    <script src="/MeuSiteTecnologia/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
